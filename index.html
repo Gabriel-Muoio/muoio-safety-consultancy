@@ -5,45 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muoio Safety Consultancy</title>
   <style>
+    :root {
+      --bronze: #904a24;
+      --text: #333;
+      --background: #fff;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 40px;
-      background: #f4f4f4;
-      color: #333;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
     }
+
     header {
-      background: #004466;
-      color: white;
-      padding: 20px;
+      padding: 40px 20px 20px;
       text-align: center;
+      border-bottom: 2px solid var(--bronze);
     }
-    section {
-      margin-top: 40px;
+
+    header img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2 {
+      color: var(--bronze);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+      color: #777;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: var(--bronze);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Muoio Safety Consultancy</h1>
-    <p>Helping workplaces achieve WHS compliance and excellence</p>
+    <img src="Assets/Line+Logo/MSC_Line+Logo_20250713-1730_Bronze.svg" alt="Muoio Safety Consultancy logo" />
   </header>
-  <section>
-    <h2>About Us</h2>
-    <p>We provide practical, intelligent safety consulting for modern Australian workplaces.</p>
-  </section>
-  <section>
-    <h2>Services</h2>
-    <ul>
-      <li>WHS Risk Assessments & Audits</li>
-      <li>Safety System Development</li>
-      <li>Incident Investigation Support</li>
-      <li>Training & Compliance</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:gabriel@muoio.au">gabriel@muoio.au</a></p>
-  </section>
+
+  <main>
+    <section>
+      <h1>Welcome</h1>
+      <p>Muoio Safety Consultancy delivers practical, intelligent safety solutions for modern Australian workplaces.</p>
+    </section>
+
+    <section>
+      <h2>Services</h2>
+      <ul>
+        <li>Work Health & Safety (WHS) Risk Assessments</li>
+        <li>Safety Management System Design & Implementation</li>
+        <li>Incident Investigation & Reporting Support</li>
+        <li>WHS Training & Documentation</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>About</h2>
+      <p>Led by a qualified and experienced WHS professional, Muoio Safety Consultancy provides tailored services for industry clients with a focus on compliance, clarity, and long-term resilience.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:hello@muoio.com.au">hello@muoio.com.au</a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Muoio Safety Consultancy — All rights reserved
+  </footer>
+
 </body>
 </html>
