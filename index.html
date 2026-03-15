@@ -1,117 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muoio Safety Consultancy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bronze: #904a24;
-      --white: #ffffff;
-      --black: #000000;
-      --text: #3f3f3f;
-      --background: #ececec;
-      --muted: #999;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muoio Safety Consultancy</title>
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Crimson Pro', serif;
-      background-color: var(--background);
-      color: var(--text);
-      line-height: 1.6;
-      font-weight: 300;
-    }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Newsreader:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-    header {
-      padding: 24px 20px 16px;
-      text-align: center;
-      background: linear-gradient(to bottom, #000000, #2f2f2f 90%);
-      border-bottom: 2px solid var(--bronze);
-    }
+    <style>
+        h1,
+        h2,
+        h3 {
+            font-family: 'Libre Baskerville', serif;
+        }
 
-    header img {
-      max-width: 300px;
-      height: auto;
-    }
+        body {
+            margin: 0;
+            font-family: 'Newsreader', serif;
+            background: #B27252;
+            color: #000000;
+            line-height: 1.7;
+        }
 
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+        header {
+            padding: 30px 40px;
+            border-bottom: 2px solid #000000;
+        }
 
-    h1, h2 {
-      color: var(--black);
-      margin-top: 32px;
-      margin-bottom: 8px;
-    }
+        header img {
+            max-width: 160px;
+        }
 
-    section:first-of-type h2 {
-      margin-top: 0;
-    }
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 40px;
+        }
 
-    ul {
-      padding-left: 20px;
-    }
+        .top-layout {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
 
-    a {
-      color: var(--bronze);
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
+        .left-column {
+            flex: 1;
+            max-width: 700px;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        .right-column img {
+            width: 550px;
+            border-radius: 4px;
+            display: block;
+        }
 
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      margin: 60px 0 20px;
-      color: #888;
-      opacity: 0.75;
-    }
-  </style>
+        .hero-text-block {
+            margin-bottom: 60px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 14px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .contact a {
+            color: #482117;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #000000;
+            font-size: 0.8em;
+            color: #000000;
+        }
+
+        @media (max-width: 900px) {
+            .top-layout {
+                flex-direction: column;
+            }
+
+            .right-column img {
+                width: 200px;
+            }
+
+            p+p {
+                margin-top: 12px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <img src="Assets/Line+Logo/MSC_Line+Logo_20250713-1730_Bronze.svg" alt="Muoio Safety Consultancy logo" />
-  </header>
+    <header>
+        <img src="Assets/Line+Logo/MSC_Line+Logo_20250713-1730_Black.svg" alt="Muoio Safety Consultancy">
+    </header>
 
-  <main>
-    <section>
-      <h2>Welcome</h2>
-      <p>Muoio Safety Consultancy delivers practical, intelligent safety solutions for modern Australian workplaces.</p>
-    </section>
+    <main>
+        <div class="top-layout">
 
-    <section>
-      <h2>Services</h2>
-      <ul>
-        <li>WHS Risk Assessments and Audits</li>
-        <li>Safety System Design and Implementation</li>
-        <li>Incident Investigation and Reporting</li>
-        <li>WHS Training, Documentation and Compliance Support</li>
-      </ul>
-    </section>
+            <div class="left-column">
 
-    <section>
-      <h2>About</h2>
-      <p>Led by a qualified and experienced WHS professional, Muoio Safety Consultancy provides tailored services to industry clients, focusing on clarity, compliance, and long-term safety outcomes.</p>
-    </section>
+                <section class="hero-text-block">
+                    <h2><strong>Practice</strong></h2>
 
-    <section>
-      <h2>Contact</h2>
-      <p><a href="mailto:gabriel@muoio.com.au">gabriel@muoio.com.au</a></p>
-    </section>
-  </main>
+                    <p>
+                        Muoio Safety Consultancy works with organisations operating in high-risk environments to
+                        strengthen how critical risks are understood, governed, and controlled. The consultancy supports
+                        leadership teams in the development and review of safety management systems, examination of
+                        critical risk controls, and investigation of serious incidents to identify systemic causes and
+                        guide organisational response.
+                    </p>
 
-  <footer>
-    &copy; 2025 Muoio Safety Consultancy — All rights reserved
-  </footer>
+                </section>
+
+                <section>
+                    <h2><strong>About</strong></h2>
+
+                    <p>
+                        Muoio Safety Consultancy is operated by Gabriel Muoio, who holds an Advanced Diploma of Work
+                        Health and Safety as well as a Graduate Certificate in Occupational Health and Safety from Curtin University. His work focuses on risk
+                        management, safety systems, and safety governance within high-risk industries
+                        across Western Australia.
+                    </p>
+
+
+                </section>
+
+                <section class="contact">
+                    <h2><strong>Contact</strong></h2>
+
+                    <p>
+                        <a href="mailto:gabriel@muoio.com.au">gabriel@muoio.com.au</a>
+                    </p>
+                </section>
+
+            </div>
+
+            <div class="right-column">
+                <img src="Assets/Headshot/headshot.png" alt="Gabriel Muoio">
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2026 Muoio Safety Consultancy — All rights reserved
+    </footer>
 
 </body>
+
 </html>
