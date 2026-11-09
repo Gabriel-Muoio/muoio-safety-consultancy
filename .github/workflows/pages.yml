@@ -37,13 +37,9 @@ jobs:
 
       - name: Build website
         run: pnpm run build
-        env:
-          SITE_BASE: /muoio-safety-consultancy
 
       - name: Check generated pages
         run: pnpm run check
-        env:
-          SITE_BASE: /muoio-safety-consultancy
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
