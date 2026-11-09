@@ -82,7 +82,7 @@ await rm(path.join(outputDir, "insights"), { recursive: true, force: true });
 
 const cardHtml = published.map((article, position) => {
   const number = String(published.length - position).padStart(2, "0");
-  return `<a class="learning-card-link" href="/insights/${article.slug}"><span class="topic-tag">${escapeHtml(article.topic)}</span><div class="article-index">${number}</div><h3>${escapeHtml(article.title)}</h3><p>${escapeHtml(article.summary)}</p><span class="article-status">Read article →</span></a>`;
+  return `<a class="learning-card-link" href="/insights/${article.slug}"><span class="topic-tag">${escapeHtml(article.topic)}</span><div class="article-index">${number}</div><h3>${escapeHtml(article.title)}</h3><p>${escapeHtml(article.summary)}</p><span class="article-status">Read article <span class="article-status-arrow" aria-hidden="true">→</span></span></a>`;
 }).join("");
 
 let home = await readFile(path.join(baseDir, "index.html"), "utf8");
@@ -91,6 +91,10 @@ home = replaceOne(
   /(<div class="learning-grid"[^>]*>)[\s\S]*?(<\/div><\/section><section class="contact")/,
   `$1${cardHtml}$2`,
   "the homepage article list",
+);
+home = home.replace(
+  "</head>",
+  '<link rel="stylesheet" href="/assets/site-adjustments.css"/></head>',
 );
 await writeFile(path.join(outputDir, "index.html"), home);
 
