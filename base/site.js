@@ -25,11 +25,11 @@
     button.addEventListener('click', () => window.print());
   });
 
-  const insightMatch = location.pathname.match(/^\/insights\/([^/]+)/);
+  const insightMatch = location.pathname.match(/\/insights\/([^/]+)/);
   if (insightMatch) localStorage.setItem('muoio-insight-viewed:' + insightMatch[1], 'true');
 
   document.querySelectorAll('.learning-card-link').forEach(card => {
-    const match = card.getAttribute('href')?.match(/^\/insights\/([^/]+)/);
+    const match = card.getAttribute('href')?.match(/\/insights\/([^/]+)/);
     if (!match || localStorage.getItem('muoio-insight-viewed:' + match[1]) !== 'true') return;
     const status = card.querySelector('.article-status');
     if (!status) return;

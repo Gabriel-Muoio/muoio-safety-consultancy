@@ -8,6 +8,28 @@ const contentDir = path.join(root, "content/articles");
 const faithContentDir = path.join(root, "content/faith");
 const outputDir = path.join(root, "dist");
 const templatesDir = path.join(root, "templates");
+const siteBase = String(process.env.SITE_BASE ?? "")
+  .trim()
+  .replace(/^([^/])/, "/$1")
+  .replace(/\/$/, "");
+
+async function walk(directory) {
+  const results = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const full = path.join(directory, entry.name);
+    if (entry.isDirectory()) results.push(...await walk(full));
+    else results.push(full);
+  }
+  return results;
+}
+
+function applySiteBase(source) {
+  if (!siteBase) return source;
+  return source
+    .replaceAll('href="/', `href="${siteBase}/`)
+    .replaceAll('src="/', `src="${siteBase}/`)
+    .replace(/url\((['"]?)\//g, `url($1${siteBase}/`);
+}
 
 function parseFrontMatter(source, fileName) {
   const match = source.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
@@ -132,4 +154,10 @@ if (visibleFaith.length) {
   }
 }
 
-console.log(`Built ${published.length} professional articles and ${visibleFaith.length} additional Faith articles${previewFaith ? " in preview mode" : ""}.`);
+for (const file of await walk(outputDir)) {
+  if (!/\.(?:html|css|js)$/.test(file)) continue;
+  const source = await readFile(file, "utf8");
+  await writeFile(file, applySiteBase(source));
+}
+
+console.log(`Built ${published.length} professional articles and ${visibleFaith.length} additional Faith articles${previewFaith ? " in preview mode" : ""}${siteBase ? ` for ${siteBase}` : ""}.`);
