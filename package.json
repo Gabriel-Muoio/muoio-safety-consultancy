@@ -1,0 +1,14 @@
+{
+  "name": "muoio-safety-consultancy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "python3 -m http.server 4174 --directory dist",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": {
+    "marked": "^16.4.2"
+  }
+}
