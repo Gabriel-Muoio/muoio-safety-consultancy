@@ -1,0 +1,9 @@
+.button svg {
+  transform: translateY(1px);
+}
+
+.article-status-arrow,
+.learning-rail-note span:last-child {
+  display: inline-block;
+  transform: translateY(-1px);
+}
